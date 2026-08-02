@@ -1,16 +1,119 @@
-# gradelens_new
+# 🎓 GradeLens
 
-A new Flutter project.
+<div align="center">
 
-## Getting Started
+**AI-Assisted Assessment Marking System**
 
-This project is a starting point for a Flutter application.
+*Developed using Flutter, Supabase, OCR, and Gemini AI*
 
-A few resources to get you started if this is your first Flutter project:
+🚧 **Final Year Project (FYP)**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+</div>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📖 Overview
+
+GradeLens is a mobile application designed to assist teachers in marking assessments more efficiently. The system combines **Optical Character Recognition (OCR)** and **Artificial Intelligence (Gemini AI)** to automatically recognize student answers, compare them with marking criteria, and provide intelligent marking assistance.
+
+The project aims to reduce teachers' marking workload while improving consistency and saving time.
+
+---
+
+## ✨ Features
+
+- 📄 Upload question papers
+- 📝 Upload student answer sheets
+- 🔍 OCR text recognition using Google ML Kit
+- 🤖 AI-assisted answer evaluation with Gemini AI
+- ✅ Automatic MCQ checking
+- 📚 Keyword-based subjective answer marking
+- 📊 Question-by-question analysis
+- 📈 Overall assessment summary
+- 👩‍🏫 Teacher dashboard
+- ☁️ Cloud database powered by Supabase
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Flutter | Mobile App Development |
+| Dart | Programming Language |
+| Supabase | Backend & Database |
+| Google ML Kit | OCR Text Recognition |
+| Gemini AI | AI Answer Evaluation |
+| OpenCV | Image Processing |
+| Git & GitHub | Version Control |
+
+---
+
+## 📱 Screens
+
+- Login
+- Dashboard
+- Create Assessment Session
+- Upload Question Paper
+- Add Keywords
+- MCQ Answer Configuration
+- Student Answer Capture
+- OCR Review
+- AI Marking Results
+- Question Analysis
+- Overall Results
+- Teacher Profile
+
+---
+
+## 📂 Project Structure
+
+```
+lib/
+├── models/
+├── screens/
+├── services/
+├── widgets/
+└── main.dart
+
+assets/
+└── images/
+
+android/
+ios/
+```
+
+---
+
+## 🚀 Current Progress
+
+- ✅ User Interface completed
+- ✅ Session management implemented
+- ✅ Supabase integration completed
+- ✅ OCR integration completed
+- ✅ AI marking integration completed
+- 🔄 Continuous improvements and testing
+
+---
+
+## 🎯 Project Objective
+
+To develop an intelligent assessment marking system that assists teachers in automatically evaluating student answers using OCR and Artificial Intelligence, reducing manual marking effort while improving efficiency and consistency.
+
+---
+
+## 👩‍💻 Developer
+
+**Tee Lai Er**
+
+Diploma in Information Technology (DIT)
+
+Final Year Project
+
+---
+
+## 📄 License
+
+This project is developed for academic purposes as a Final Year Project.
+
+© 2026 Tee Lai Er. All Rights Reserved.
