@@ -232,7 +232,7 @@ class _QuestionDetailsScreenState
                           children: [
 
                             const Text(
-                              "AI Feedback",
+                              "Answer Feedback",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
