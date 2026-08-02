@@ -215,7 +215,7 @@ class _StudentReportScreenState
               "${widget.student["grade"] ?? "-"}",
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 15),
 
             aiCard(
               "🤖 Performance Feedback",
