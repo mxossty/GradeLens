@@ -218,14 +218,14 @@ class _StudentReportScreenState
             const SizedBox(height: 25),
 
             aiCard(
-              "🤖 AI Feedback",
+              "🤖 Performance Feedback",
               aiFeedback,
             ),
 
             const SizedBox(height: 15),
 
             aiCard(
-              "💡 AI Recommendation",
+              "💡 Study Recommendation",
               aiRecommendation,
             ),
 
