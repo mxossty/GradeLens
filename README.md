@@ -83,19 +83,6 @@ android/
 ios/
 ```
 
----
-
-## 🚀 Current Progress
-
-- ✅ User Interface completed
-- ✅ Session management implemented
-- ✅ Supabase integration completed
-- ✅ OCR integration completed
-- ✅ AI marking integration completed
-- 🔄 Continuous improvements and testing
-
----
-
 ## 🎯 Project Objective
 
 To develop an intelligent assessment marking system that assists teachers in automatically evaluating student answers using OCR and Artificial Intelligence, reducing manual marking effort while improving efficiency and consistency.
