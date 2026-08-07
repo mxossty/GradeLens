@@ -26,7 +26,9 @@ class GradeLensApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Grade Lens',
-      home: LoginScreen(), //remember to change :)
+      home: Supabase.instance.client.auth.currentSession == null
+          ? LoginScreen()
+          : const DashboardScreen(),
     );
   }
 }
