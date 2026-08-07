@@ -4,7 +4,7 @@ import 'dart:io';
 
 class GeminiService {
 
-  static const String apiKey = "AQ.Ab8RN6K0zqkif8RJtS6vfFqwCGEN3KzcfGawdj9KNjFhx3iPqw";
+  static const String apiKey = "YOUR_API_KEY_HERE";
 
   static Future<String> cleanQuestions(
       String ocrText,

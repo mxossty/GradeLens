@@ -16,7 +16,12 @@ class ClassScreen extends StatefulWidget {
 
 class _ClassScreenState extends State<ClassScreen> {
   Future<List<Map<String, dynamic>>> getSessions() async {
-    final data = await Supabase.instance.client.from('sessions').select();
+    final user = Supabase.instance.client.auth.currentUser;
+
+    final data = await Supabase.instance.client
+        .from('sessions')
+        .select()
+        .eq('user_id', user!.id);
 
     return List<Map<String, dynamic>>.from(data);
   }

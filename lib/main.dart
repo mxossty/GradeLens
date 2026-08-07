@@ -15,12 +15,6 @@ Future<void> main() async {
 
   );
 
-  //remember to remove this part before presentation.this is added to remove any RLS.
-  await Supabase.instance.client.auth.signInWithPassword(
-    email: "laii@gmail.com",
-    password: "Pws123456.",
-  );
-
   runApp(const GradeLensApp());
 }
 
@@ -32,7 +26,7 @@ class GradeLensApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Grade Lens',
-      home: DashboardScreen(), //remember to change :)
+      home: LoginScreen(), //remember to change :)
     );
   }
 }

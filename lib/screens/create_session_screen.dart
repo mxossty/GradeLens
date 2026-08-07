@@ -317,18 +317,14 @@ class _CreateSessionScreenState extends State<CreateSessionScreen> {
                     final supabase = Supabase.instance.client;
 
                     Map<String, dynamic> sessionData = {
+                      'user_id': Supabase.instance.client.auth.currentUser!.id,
                       'class_name': classController.text.trim(),
-
                       'subject': subjectController.text.trim(),
-
                       'student_count': studentCount,
-
                       'question_type': questionType,
-
                       'mcq_question_count': questionType == "MCQ"
                           ? mcqCount
                           : null,
-
                       'assessment_date': selectedDate?.toIso8601String(),
                     };
 

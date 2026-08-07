@@ -19,11 +19,21 @@ class _OverallResultsScreenState extends State<OverallResultsScreen> {
   String selectedSort = "Highest Score";
 
   Future<void> loadPerformance() async {
-    final submissions = await Supabase.instance.client
-        .from('student_submissions')
-        .select();
+    final user = Supabase.instance.client.auth.currentUser;
 
-    final sessions = await Supabase.instance.client.from('sessions').select();
+    final sessions = await Supabase.instance.client
+        .from('sessions')
+        .select()
+        .eq('user_id', user!.id);
+
+    final sessionIds = sessions.map((e) => e['id']).toList();
+
+    final submissions = sessionIds.isEmpty
+        ? []
+        : await Supabase.instance.client
+        .from('student_submissions')
+        .select()
+        .inFilter('session_id', sessionIds);
 
     subjects = ["All Subjects"];
 

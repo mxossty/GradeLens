@@ -48,9 +48,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> loadLatestSession() async {
+    final user = Supabase.instance.client.auth.currentUser;
+
     final data = await Supabase.instance.client
         .from('sessions')
         .select()
+        .eq('user_id', user!.id)
         .order('created_at', ascending: false)
         .limit(1);
 
@@ -71,13 +74,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> loadDashboardStats() async {
+    final user = Supabase.instance.client.auth.currentUser;
+
     final sessions = await Supabase.instance.client
         .from('sessions')
-        .select('student_count');
+        .select('id, student_count')
+        .eq('user_id', user!.id);
 
-    final submissions = await Supabase.instance.client
+    final sessionIds = sessions.map((e) => e['id']).toList();
+
+    final submissions = sessionIds.isEmpty
+        ? []
+        : await Supabase.instance.client
         .from('student_submissions')
-        .select();
+        .select()
+        .inFilter('session_id', sessionIds);
 
     int expectedStudents = 0;
 
@@ -95,7 +106,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   Future<void> loadSessionCount() async {
-    final sessions = await Supabase.instance.client.from('sessions').select();
+    final user = Supabase.instance.client.auth.currentUser;
+
+    final sessions = await Supabase.instance.client
+        .from('sessions')
+        .select()
+        .eq('user_id', user!.id);
 
     setState(() {
       totalSessions = sessions.length;
@@ -219,8 +235,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ],
                     ),
-
-                    Text("Paper: Quiz 2"),
 
                     SizedBox(height: 5),
 
